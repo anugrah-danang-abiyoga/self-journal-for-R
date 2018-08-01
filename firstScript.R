@@ -56,3 +56,4 @@ class(my_character)
 
 # Check class of my_logical
 class(my_logical)
+#Finish
