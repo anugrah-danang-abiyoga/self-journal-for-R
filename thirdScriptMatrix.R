@@ -94,3 +94,5 @@ us_visitors
 
 # Average number of US visitors
 mean(us_visitors)
+
+# End
