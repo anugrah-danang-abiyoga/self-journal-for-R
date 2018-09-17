@@ -36,3 +36,7 @@ g <- c(500, 50, 5000)
 order(g)
 
 rings_vector
+
+## Special task: this is to create a 3D pie chart 
+secondlabels <- c(18, 27, 25, 33, 43, 50, 60, 20)
+pie3D(table(`student_services_data(1).(1)`$age), main="age chart", labels=secondlabels)
