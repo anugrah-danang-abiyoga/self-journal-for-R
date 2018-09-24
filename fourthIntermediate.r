@@ -66,3 +66,4 @@ years <- lapply(split_low, select_el, index = 2)
 years
 
 ## The use of sapply() will return vector
+## The use of vapply() will apply function over list or vector explicitly specify output format
