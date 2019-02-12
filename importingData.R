@@ -64,3 +64,32 @@ potatoes <- read_tsv("potatoes.txt", col_names = properties)
 
 # Call head() on potatoes
 head(potatoes)
+
+# 5th: Column names
+properties <- c("area", "temp", "size", "storage", "method",
+                "texture", "flavor", "moistness")
+
+# Import potatoes.txt using read_delim(): potatoes
+potatoes <- read_delim("potatoes.txt", delim = "\t", col_names = properties)
+
+# Print out potatoes
+potatoes
+
+# 6th: use the .tsv and use skip & n_max to import data
+# Column names
+properties <- c("area", "temp", "size", "storage", "method",
+                "texture", "flavor", "moistness")
+
+# Import 5 observations from potatoes.txt: potatoes_fragment
+potatoes_fragment <- read_tsv("potatoes.txt", skip = 6, n_max = 5, col_names = properties)
+
+# 7th: use str to know the structure of the data
+# Column names
+properties <- c("area", "temp", "size", "storage", "method",
+                "texture", "flavor", "moistness")
+
+# Import all data, but force all columns to be character: potatoes_char
+potatoes_char <- read_tsv("potatoes.txt", col_types = "cccccccc", col_names = properties)
+
+# Print out structure of potatoes_char
+str(potatoes_char)
