@@ -28,3 +28,17 @@ pop_list <- lapply(excel_sheets("urbanpop.xlsx"),
 
 # Display the structure of pop_list
 str(pop_list)
+
+# 4th: practice use the col_names
+# Import the first Excel sheet of urbanpop_nonames.xlsx (R gives names): pop_a
+pop_a <- read_excel("urbanpop_nonames.xlsx", col_names = FALSE)
+
+# Import the first Excel sheet of urbanpop_nonames.xlsx (specify col_names): pop_b
+cols <- c("country", paste0("year_", 1960:1966))
+pop_b <- read_excel("urbanpop_nonames.xlsx", sheet = 1, col_names = cols)
+
+# Print the summary of pop_a
+summary(pop_a)
+
+# Print the summary of pop_b
+summary(pop_b)
