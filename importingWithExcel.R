@@ -42,3 +42,40 @@ summary(pop_a)
 
 # Print the summary of pop_b
 summary(pop_b)
+
+# 5th: use gdata to load excel file 
+# Load the gdata package
+library(gdata)
+
+# Import the second sheet of urbanpop.xls: urban_pop
+urban_pop <- read.xls("urbanpop.xls", sheet = 2)
+
+# Print the first 11 observations using head()
+head(urban_pop, n = 11)
+
+#6th: gdata continued
+# Load the gdata package
+library(gdata)
+
+# Import the second sheet of urbanpop.xls: urban_pop
+urban_pop <- read.xls("urbanpop.xls", sheet = 2)
+
+# Print the first 11 observations using head()
+head(urban_pop, n = 11)
+
+# 7th: use na.omit to clean up all the N/A data
+# Add code to import data from all three sheets in urbanpop.xls
+path <- "urbanpop.xls"
+urban_sheet1 <- read.xls(path, sheet = 1, stringsAsFactors = FALSE)
+urban_sheet2 <- read.xls(path, sheet = 2, stringsAsFactors = FALSE)
+urban_sheet3 <- read.xls(path, sheet = 3, stringsAsFactors = FALSE)
+
+
+# Extend the cbind() call to include urban_sheet3: urban
+urban <- cbind(urban_sheet1, urban_sheet2[-1], urban_sheet3[-1])
+
+# Remove all rows with NAs from urban: urban_clean
+urban_clean <- na.omit(urban)
+
+# Print out a summary of urban_clean
+summary(urban_clean)
