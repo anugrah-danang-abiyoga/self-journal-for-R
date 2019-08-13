@@ -70,3 +70,36 @@ students3$sex <- str_replace(students3$sex, "M", "Male")
 
 # View the head of students3
 head(students3)
+
+# 4 check the NA status
+# Call is.na() on the full social_df to spot all NAs
+is.na(social_df)
+
+# Use the any() function to ask whether there are any NAs in the data
+any(is.na(social_df))
+
+# View a summary() of the dataset
+summary(social_df)
+
+# Call table() on the status column
+table(social_df$status)
+
+# 4: Use of boxplot to find outliers data
+# View a boxplot of age
+boxplot(students3$age)
+
+# View a boxplot of absences
+boxplot(students3$absences)
+
+# 5: View data structures
+# View the structure of the data
+str(weather)
+
+# Load dplyr package
+library(dplyr)
+
+# Look at the structure using dplyr's glimpse()
+glimpse(weather)
+
+# View a summary of the data
+summary(weather)
