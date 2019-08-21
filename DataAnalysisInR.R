@@ -26,3 +26,23 @@ email50_fortified <- email50 %>%
 # Visualize the distribution of number_yn
 ggplot(email50_fortified, aes(x = number_yn)) +
   geom_bar()
+
+# 3: Simpson paradox
+
+ucb_admission_counts %>%
+  # Group by gender
+  group_by(Gender) %>%
+  # Create new variable
+  mutate(prop = n / sum(n)) %>%
+  # Filter for admitted
+  filter(Admit == "Admitted")
+
+# 4: practising mutate and filter function
+
+ucb_admission_counts  %>%
+  # Group by department, then gender
+  group_by(Dept, Gender) %>%
+  # Create new variable
+  mutate(prop = n / sum(n)) %>%
+  # Filter for male and admitted
+  filter(Gender == "Male", Admit == "Admitted")
